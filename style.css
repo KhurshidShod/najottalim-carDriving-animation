@@ -1,0 +1,437 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: #021823;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.road{
+    position: relative;
+    width: 100%;
+    height: 200px;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.road::before{
+    content: '';
+    position: absolute;
+    width: 100% !important;
+    height: 4px;
+    right: 0;
+    background: linear-gradient(90deg, #fff, #fff 50%, transparent 50%, transparent 100%);
+    background-size: 50px;
+    animation: animateRoad .09s linear infinite;
+    -webkit-animation: animateRoad .09s linear infinite;
+}
+.police1, .police2{
+    background-color: rgb(46, 46, 46) !important;
+}
+.policeLight{
+    width: 15px;
+    height: 35px;
+    border-radius: 3px;
+    background-color: red;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    -ms-border-radius: 3px;
+    -o-border-radius: 3px;
+}
+.policeLight .blue,
+.policeLight .red{
+    width: 100%;
+    height: 50%;
+}
+.policeLight .blue{
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+    background-color: blue;
+    box-shadow: none;
+    animation: blue 1s linear infinite;
+    /*box-shadow: blue 0px 54px 55px, blue 0px -12px 30px, blue 0px 4px 6px, blue 0px 12px 13px, blue 0px -3px 5px;
+    */
+    -webkit-animation: blue 1s linear infinite;
+    -webkit-animation: blue 1s linear infinite;
+}
+.policeLight .red{
+    border-bottom-left-radius: 3px;
+    border-bottom-right-radius: 3px;
+    background-color: red;
+    box-shadow: none;
+    animation: red 1s linear infinite;
+    /*box-shadow: red 0px 54px 55px, red 0px -12px 30px, red 0px 4px 6px, red 0px 12px 13px, red 0px -3px 5px;
+    */
+    animation-delay: 3s;
+    -webkit-animation: red 1s linear infinite;
+}
+.car{
+    width: 175px;
+    height: 75px;
+    background-color: rgb(195, 195, 195);
+    border-radius: 15px;
+    position: relative;
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    -ms-border-radius: 15px;
+    -o-border-radius: 15px;
+}
+.car1{
+    position: absolute;
+    right: 10%;
+    top: 50%;
+    animation: gobchikAnimate 2s linear infinite forwards;
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    -webkit-animation: gobchikAnimate 2s linear infinite forwards;
+}
+.police1{
+    position: absolute;
+    left: 20%;
+    top: 5%;
+    animation: police1Animate 3s linear infinite forwards;
+    -webkit-animation: police1Animate 3s linear infinite forwards;
+}
+.police2{
+    position: absolute;
+    left: 50%;
+    top: 55%;
+    animation: police2Animate 3s linear infinite forwards;
+    animation-delay: 1s;
+    -webkit-animation: police2Animate 3s linear infinite forwards;
+}
+.car::before{
+    content: '';
+    width: 6px;
+    height: 12px;
+    border-radius: 2px;
+    background-color: red;
+    position: absolute;
+    top: 7px;
+    left: 5px;
+    box-shadow: 0 45px red;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    -ms-border-radius: 2px;
+    -o-border-radius: 2px;
+}
+.car::after{
+    content: '';
+    width: 7px;
+    height: 17px;
+    border-radius: 5px;
+    background-color: orange;
+    position: absolute;
+    top: 7px;
+    right: 5px;
+    box-shadow: 0 45px orange;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+}
+.mirror{
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+.mirror::before{
+    content: '';
+    width: 7px;
+    height: 7px;
+    border-radius: 45% 45% 0 0;
+    background-color: rgb(228, 228, 228);
+    position: absolute;
+    top: -5px;
+    left: 60%;
+    z-index: 9;
+    -webkit-border-radius: 45% 45% 0 0;
+    -moz-border-radius: 45% 45% 0 0;
+    -ms-border-radius: 45% 45% 0 0;
+    -o-border-radius: 45% 45% 0 0;
+}
+.mirror::after{
+    content: '';
+    width: 7px;
+    height: 7px;
+    border-radius: 45% 45% 0 0;
+    background-color: rgb(228, 228, 228);
+    position: absolute;
+    bottom: -5px;
+    left: 60%;
+    transform: rotate(180deg);
+    z-index: 9;
+    -webkit-border-radius: 45% 45% 0 0;
+    -moz-border-radius: 45% 45% 0 0;
+    -ms-border-radius: 45% 45% 0 0;
+    -o-border-radius: 45% 45% 0 0;
+    -webkit-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+}
+.police1 i,
+.police2 i{
+    background-color: rgb(26, 26, 26) !important;
+}
+.car i{
+    width: 145px;
+    height: 70px;
+    background-color: white;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 5px;
+    position: absolute;
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+}
+.car p{
+    width: 95px;
+    height: 65px;
+    position: absolute;
+    background-color: black;
+    top: 50%;
+    left: 50%;
+    border-radius: 5px;
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+}
+.car b{
+    width: 65px;
+    height: 50px;
+    position: absolute;
+    border-radius: 5px;
+    background-color: white;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+}
+.car b::before{
+    content: '';
+    width: 5px;
+    height: 25px;
+    background-color: white;
+    position: absolute;
+    top: -15px;
+    border-radius: 25px;
+    left: -9px;
+    transform: rotate(-60deg);
+    -webkit-transform: rotate(-60deg);
+    -moz-transform: rotate(-60deg);
+    -ms-transform: rotate(-60deg);
+    -o-transform: rotate(-60deg);
+    box-shadow: -9px 93px white;
+}
+.car1 .flash::before,
+.car1 .flash::after{
+    animation: none !important;
+    -webkit-animation: none !important;
+}
+.car b::after{
+    content: '';
+    width: 5px;
+    height: 25px;
+    background-color: white;
+    position: absolute;
+    top: -15px;
+    right: -9px;
+    border-radius: 25px;
+    transform: rotate(60deg);
+    -webkit-transform: rotate(60deg);
+    -moz-transform: rotate(60deg);
+    -ms-transform: rotate(60deg);
+    -o-transform: rotate(60deg);
+    box-shadow: 9px 93px white;
+    -webkit-border-radius: 25px;
+    -moz-border-radius: 25px;
+    -ms-border-radius: 25px;
+    -o-border-radius: 25px;
+}
+.flash{
+    width: 10px;
+    height: 75px;
+    background-color: transparent;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+.flash::before{
+    content: '';
+    width: 200px;
+    height: 15px;
+    position: absolute;
+    animation: flash 1s linear infinite;
+    -webkit-animation: flash 1s linear infinite;
+    animation-delay: 0;
+    background: linear-gradient(to right, rgba(255, 255, 255, 0.3), transparent);
+    left: 0;
+    top: 7px;
+}
+.flash::after{
+    content: '';
+    width: 200px;
+    height: 15px;
+    position: absolute;
+    animation: flash 1s linear infinite;
+    -webkit-animation: flash 1s linear infinite;
+    animation-delay: 0;
+    background: linear-gradient(to right, rgba(255, 255, 255, 0.3), transparent);
+    left: 0;
+    bottom: 7px;
+}
+.police1 .firstPolice,
+.police2 .firstPolice{
+    position: absolute;
+    transform: translate(-50%, -50%) rotate(90deg);
+    top: 50%;
+    left: 15%;
+    font-size: 14px;
+    text-transform: uppercase;
+    font-family: sans-serif;
+    color: white;
+    -webkit-transform: translate(-50%, -50%) rotate(90deg);
+    -moz-transform: translate(-50%, -50%) rotate(90deg);
+    -ms-transform: translate(-50%, -50%) rotate(90deg);
+    -o-transform: translate(-50%, -50%) rotate(90deg);
+}
+.police1 .lastPolice,
+.police2 .lastPolice{
+    position: absolute;
+    transform: translate(-50%, -50%) rotate(90deg);
+    top: 50%;
+    right: -15%;
+    font-size: 14px;
+    text-transform: uppercase;
+    font-family: sans-serif;
+    color: white;
+    -webkit-transform: translate(-50%, -50%) rotate(90deg);
+    -moz-transform: translate(-50%, -50%) rotate(90deg);
+    -ms-transform: translate(-50%, -50%) rotate(90deg);
+    -o-transform: translate(-50%, -50%) rotate(90deg);
+}
+@keyframes animateRoad {
+    0%{
+        background-position: 50px 0;
+    } 
+    100%{
+        background-position: 0 0;
+    }
+}
+@keyframes police1Animate {
+    0%{
+        top: 5%;
+        left: 20%;
+    }
+    33%{
+        top: 30%;
+        left: 30%;
+    }
+    66%{
+        top: 55%;
+        left: 20%;
+    }
+    100%{
+        top: 5%;
+        left: 20%;
+    }
+}
+@keyframes police2Animate {
+    0%{
+        left: 50%;
+        top: 55%;
+    }
+    33%{
+        top: 35%;
+        left: 58%;
+    }
+    66%{
+        top: 5%;
+        left: 50%;
+    }
+    100%{
+        left: 50%;
+        top: 55%;
+    }
+}
+@keyframes gobchikAnimate {
+    0%{
+        right: 10%;
+    }
+    50%{
+        right: 5%;
+    }
+    100%{
+        right: 10%;
+    }
+}
+@keyframes blue {
+    0%{
+        box-shadow: none;
+    }
+    50%{
+        box-shadow: blue 0px 54px 55px, blue 0px -12px 30px, blue 0px 4px 6px, blue 0px 12px 13px, blue 0px -3px 5px;
+    }
+    100%{
+        box-shadow: none;
+    }
+}
+@keyframes red {
+    0%{
+        box-shadow: none;
+    }
+    50%{
+        box-shadow: red 0px 54px 55px, red 0px -12px 30px, red 0px 4px 6px, red 0px 12px 13px, red 0px -3px 5px;
+    }
+    100%{
+        box-shadow: none;
+    }
+}
+@keyframes flash {
+    0%{
+        background: linear-gradient(to right, rgba(255, 255, 255, 0.3), transparent);
+    }
+    50%{
+    background: none;
+    }
+    100%{
+        background: linear-gradient(to right, rgba(255, 255, 255, 0.3), transparent);
+    }
+}
